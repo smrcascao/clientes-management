@@ -38,20 +38,6 @@ const pool = new Pool({
 })
 
 router.get('/api', (req, res) => {
-// connection using created pool
-
-
-
-
-// by default the pool uses the same
-// configuration as whatever `pg` version you have installed
-
-
-// you can pass properties to the pool
-// these properties are passed unchanged to both the node-postgres Client constructor
-// and the node-pool (https://github.com/coopernurse/node-pool) constructor
-// allowing you to fully configure the behavior of both
-
 	pool.query('SELECT * from tbl_city', (err,resp)=> {
 		console.log(err,resp);
 		res.send(resp);
