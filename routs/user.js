@@ -20,7 +20,7 @@ router.get('/api', (req, res) => {
 
 //Create New User
 router.post('/newuser', function(req, res) {
-    res.send('POST handler for /dogs route.');
+    res.send(JSON.parse(req));
 
 
 
