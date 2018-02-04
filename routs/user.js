@@ -2,7 +2,7 @@
 // BASE SETUP
 // ==============================================
 
-var express = require('express').Router();
+var router = require('express').Router();
 
 // ROUTES
 // ==============================================
@@ -20,7 +20,7 @@ router.get('/api', (req, res) => {
 
 //Create New User
 router.post('/newuser', function(req, res) {
-    res.send('POST handler for /dogs route.');
+    res.send(json.parse(req));
 
 
 
