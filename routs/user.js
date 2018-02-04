@@ -1,24 +1,8 @@
-// userManagement.js
 
 // BASE SETUP
 // ==============================================
 
-var express = require('express');
-
-var router = express.Router();
-//connection data base
-const {Pool, Client}  = require('pg')
-const pool = new Pool({
-    database: 'quinta_da_couceira',
-    user: 'qcouceira',
-    password: 'qcouceira',
-    host: 'qcouceira.cmjmvmmgcc89.us-east-2.rds.amazonaws.com',
-    port: 5432
-})
-
-
-
-//const pool = new pg.Pool(connectionString);
+var express = require('express').Router();
 
 // ROUTES
 // ==============================================
