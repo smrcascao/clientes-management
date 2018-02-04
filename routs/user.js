@@ -20,7 +20,7 @@ router.get('/api', (req, res) => {
 
 //Create New User
 router.post('/newuser', function(req, res) {
-    res.send(json.parse(req));
+    res.send(JSON.parse(req));
 
 
 
