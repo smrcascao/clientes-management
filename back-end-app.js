@@ -3,7 +3,13 @@
 
 // init project
 var express = require('express');
+var bodyParser = require('body-parser');
 var app = express();
+
+app.use(bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+})); 
 
 //connection data base
 const {Pool, Client}  = require('pg')
@@ -16,12 +22,10 @@ global.pool = new Pool({
 })
 
 var userManagement    = require('./routs/user');
-//    cats    = require('./routes/cats'),
-//    birds   = require('./routes/birds');
-
+var eventManagement   = require('./routs/event');
 
 app.use('/user',  userManagement);
-
+app.use('/event',  eventManagement);
 
 
 // listen for requests :)

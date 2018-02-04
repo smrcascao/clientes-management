@@ -9,10 +9,15 @@ var router = require('express').Router();
 
 // sample route with a route the way we're used to seeing it
 
-router.get('/api', (req, res) => {
-	pool.query('SELECT * from tbl_city', (err,resp)=> {
+router.get('/', (req, res) => {
+	pool.query('SELECT * from tbl_event', (err,resp)=> {
 		console.log(err,resp);
-		res.send(resp);
+		if (err) {
+			res.status(400).send('Problem acessing DB.');
+		} else {
+			res.send(resp);
+		}
+		
 		pool.end()
 	})
 });
