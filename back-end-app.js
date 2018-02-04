@@ -5,7 +5,7 @@
 var express = require('express');
 var app = express();
 
-var userManagement    = require('./routs/userManagement');
+var userManagement    = require('./routs/user');
 //    cats    = require('./routes/cats'),
 //    birds   = require('./routes/birds');
 
