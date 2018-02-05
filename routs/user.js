@@ -19,8 +19,27 @@ router.get('/api', (req, res) => {
 // ==============================================
 
 //Create New User
-router.post('/newuser', function(req, res) {
-    res.send(JSON.parse(req));
+router.post('/user', function(req, res) {
+
+    response=''
+
+console.log('INSERT INTO tbl_clients(creation_date, first_name, middle_name, last_name, sex)' +
+    'VALUES (CURRENT_TIMESTAMP, \''+JSON.stringify(req.body.first_name)+'\', \''+JSON.stringify(req.body.midle_name)+'\', \''+JSON.stringify(req.body.last_name)+'\', \''
+    +JSON.stringify(req.body.sex)+'\');')
+
+
+    pool.query('INSERT INTO tbl_clients(creation_date, first_name, middle_name, last_name, sex)' +
+        'VALUES (CURRENT_TIMESTAMP, \''+JSON.stringify(req.body.first_name)+'\', \''+JSON.stringify(req.body.midle_name)+'\', \''+JSON.stringify(req.body.last_name)+'\', \''
+        +JSON.stringify(req.body.sex)+'\');'
+
+        , (err,resp)=> {
+            console.log(err,resp)
+
+    })
+
+
+
+    res.send(JSON.stringify(req.body.first_name)+" \n "+JSON.stringify(response));
 
 
 
